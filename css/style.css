@@ -88,7 +88,7 @@ header{
     text-align: center;
     font-family: var(--urbane);
     font-weight: 200;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--slate);
     margin: 0;
     padding: 0px 8px 0px 8px;
@@ -108,20 +108,25 @@ header{
 }
 
 .burgermenu img{
-    height: 50px;
-    width: 50px;
-    right: 30px;
-    top: 20px;
+    height: 60px;
+    width: 60px;
+    right: 0px;
+    top: 0px;
     position: absolute;
+    padding: 20px;
+    padding-right: 30px;
+    padding-top: 20px;
 
 }
 
 .sidemenu{
+    width: 100vw;
     background-color: var(--white);
     position: absolute;
-    right: 50px;
+    right: 0px;
     transform: translateX(150%);
-    transition: 0.3s;
+    transition: 0.4s;
+    box-shadow: 0 20px 30px 0px rgba(0, 0, 0, 0.096);
 }
 
 .sidemenu ul{
@@ -138,52 +143,17 @@ header{
     font-size: 1.7rem;
     font-weight: 200;
     color: var(--dark);
+    padding: 0px 8px 0px 8px;
+}
+
+.sidemenu a:hover{
+    color: var(--white);
+    background-color: var(--dark);
 }
 
 .burgermenu:hover .sidemenu{
     transform: translateX(0%);
 }
-
-
-/* .bottomnav{
-    height: 40px;
-    position: sticky;
-    top: 0px;
-    z-index: 2;
-}
-
-.menuBottom{
-    margin-top: 0;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    background-color: #fafafa73;
-    margin-left: -20px;
-    
-}
-
-.menuBottom li{
-    display: inline-block;
-    margin-right: 1vw;
-}
-
-.menuBottom a{
-    text-decoration: none;
-    text-align: center;
-    font-family: var(--urbane);
-    font-weight: 200;
-    font-size: 1rem;
-    color: var(--slate);
-    margin: 0;
-    padding: 0px 8px 0px 8px;
-}
-
-.menuBottom a:hover{
-    color: var(--white);
-    background-color: var(--dark);
-} */
-
 .abonner{
     color: var(--orange) !important;
     font-weight: 200 !important;
@@ -265,7 +235,6 @@ section{
     align-items: center;
 }
 .hero img{
-    position: absolute;
     width: auto;
     height: 50%;
 }
@@ -395,5 +364,118 @@ footer p{
 
     .burgermenu{
         display: block;
+    }
+
+    .hero img{
+        width: 40%;
+        height: auto;
+    }
+
+    .container{
+        margin-top: 2vh;
+        background-color: rgba(208, 204, 208, 0.267);
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    
+    }
+    .articlepreview{
+        height: auto;
+        width: 45vw;
+        margin: 1.8vw;
+        text-align: left;
+        font-family: var(--urbane);
+    }
+
+    .hero{
+        width: 100%;
+        height: 30vh;
+        background-image: url("../images/img1hero.jpeg");
+        background-size: cover;
+        background-position: 50% 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    main{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        margin-top: 3vh;
+    }
+
+    footer{
+        border-top: 3px solid var(--gray);
+        font-family: var(--nova);
+        font-size: 1.2rem;
+        color: var(--slate);
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    
+
+    .tiltop{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 650px){
+    footer{
+        border-top: 3px solid var(--gray);
+        font-family: var(--nova);
+        font-size: 1.2rem;
+        color: var(--slate);
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    .adresse{
+        margin-left: 0px;
+        margin-bottom: 20px;
+    }
+    .kontakt{
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .socials{
+        display: flex;
+        margin-right: 0px;
+        margin-bottom: 20px;
+    }
+}
+
+
+@media screen and (max-width: 400px){
+    .articlepreview{
+        height: auto;
+        width: 60vw;
+        margin: 1.8vw;
+        text-align: left;
+        font-family: var(--urbane);
+    }
+    .hero img{
+        width: 70%;
+        height: auto;
     }
 }
