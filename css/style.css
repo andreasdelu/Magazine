@@ -21,6 +21,7 @@
 html {
   padding: 0;
   margin: 0;
+  font-size: 16px;
 }
 body {
   height: 100%;
@@ -28,7 +29,6 @@ body {
   padding: 0;
   margin: 0;
   background-color: var(--white);
-  font-size: 16px;
   overflow-x: hidden;
 }
 
@@ -48,7 +48,6 @@ header {
   height: auto;
   border-bottom: 3px solid var(--gray);
   position: relative;
-  overflow: hidden;
   background-color: var(--white);
   padding: 0;
   margin: 0;
@@ -62,21 +61,21 @@ header {
   display: block;
   margin-left: 30px;
   margin-top: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   height: auto;
   width: auto;
   z-index: 2;
 }
 .logo img {
   width: auto;
-  height: 60px;
+  height: 50px;
 }
 .menu {
   margin: 0;
   margin-left: 20px;
   padding: 0;
 }
-.menu li {
+.menuitem {
   display: inline-block;
   margin-left: 1.5vw;
 }
@@ -86,10 +85,11 @@ header {
   text-align: center;
   font-family: var(--urbane);
   font-weight: 200;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--slate);
   margin: 0;
   padding: 0px 8px 0px 8px;
+  cursor: pointer;
 }
 .menuRight {
   margin-right: 20px;
@@ -112,7 +112,7 @@ header {
   position: absolute;
   padding: 20px;
   padding-right: 30px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .sidemenu {
@@ -123,10 +123,12 @@ header {
   transform: translateX(150%);
   transition: 0.4s;
   box-shadow: 0 20px 30px 0px rgba(0, 0, 0, 0.096);
+  display: none;
 }
 
 .sidemenu ul {
   list-style: none;
+  width: 100%;
 }
 
 .sidemenu li {
@@ -153,6 +155,7 @@ header {
 
 .burgermenu:hover .sidemenu {
   transform: translateX(0%);
+  display: block;
 }
 .abonner {
   color: var(--orange) !important;
@@ -170,17 +173,17 @@ header {
   color: var(--white);
   background-color: var(--red);
 }
-.menu1:hover .m1 {
-  transform: translateX(-50%) scaleY(1);
+.menuitem:hover .m1{
+  transform: translateX(-50%) scaleY(0.25);
 }
-.menu2:hover .m2 {
-  transform: translateX(-50%) scaleY(1);
+.menuitem:hover .m2{
+  transform: translateX(-50%) scaleY(0.25);
 }
-.menu3:hover .m3 {
-  transform: translateX(-50%) scaleY(1);
+.menuitem:hover .m3{
+  transform: translateX(-50%) scaleY(0.25);
 }
-.menu4:hover .m4 {
-  transform: translateX(-50%) scaleY(1);
+.menuitem:hover .m4{
+  transform: translateX(-50%) scaleY(0.25);
 }
 .menu2 a:hover {
   color: var(--white);
@@ -200,17 +203,95 @@ header {
 .menu4 {
   position: relative;
 }
-.menu1 svg,
-.menu2 svg,
-.menu3 svg,
-.menu4 svg {
+.m1,
+.m2,
+.m3,
+.m4 {
   position: absolute;
   width: 60px;
   height: auto;
   left: 50%;
-  top: 120%;
+  top: -35px;
+  transform-origin: bottom;
   transform: translateX(-50%) scaleY(0);
   transition: 0.3s;
+}
+
+.menuitem:hover:after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 120%;
+  left: 50%;
+  top: 100%;
+  transform: translate( -50%);
+
+}
+
+/* Dropdown */
+
+.dropdown{
+  display: none;
+  position: absolute;
+  box-sizing: border-box;
+  top: 0px;
+  left: 0;
+  background-color: #fbfcff;
+  width: 200px;
+  margin-top: 55px;
+  box-shadow: 0 20px 30px 0px rgba(0, 0, 0, 0.096);
+  
+}
+
+.dropdown::after{
+  content: none;
+}
+
+.dropdown ul{
+  list-style-type: none;
+  list-style-position: inside;
+  margin-left: -3rem;
+}
+
+.dropdown li{
+  display: list-item;
+  text-align: left;
+  text-decoration: none;
+  font-family: var(--urbane);
+  font-weight: 200;
+  font-size: 1rem;
+  color: var(--slate);
+  margin: 10px;
+  padding: 0px 8px 0px 8px;
+}
+
+.menuitem:hover .dropdown{
+  display: block;
+}
+
+/* Dropdown Sidemenu */
+
+.sidedropdown{
+  display: none;
+  background-color: #d0ccd025;
+  padding-top: 5px;
+  margin-bottom: 0;
+}
+.sidedropdown:after{
+  content: '';
+  position: absolute;
+  bottom: -25px;
+  left: 0;
+  height: 25px;
+  width: 100%;
+}
+
+.sidemenuitem{
+  cursor: pointer;
+}
+
+.sidemenuitem:hover .sidedropdown{
+  display: block;
 }
 
 /* Main */
@@ -231,7 +312,7 @@ section {
 }
 .hero {
   width: 100%;
-  height: 40vh;
+  height: 36vh;
   background-image: url("../images/img1hero.jpeg");
   background-size: cover;
   background-position: 50% 50%;
@@ -444,7 +525,7 @@ input::placeholder {
     text-decoration: none;
 }
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1080px) {
   .menu,
   .menuRight {
     display: none;
@@ -458,7 +539,7 @@ input::placeholder {
   }
   .hero {
     width: 100%;
-    height: 30vh;
+    height: 25vh;
     background-image: url("../images/img1hero.jpeg");
     background-size: cover;
     background-position: 50% 50%;
@@ -498,7 +579,7 @@ input::placeholder {
   .sidemenu a {
     text-decoration: none;
     font-family: var(--urbane);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 200;
     color: var(--dark);
     padding: 0px 8px 0px 8px;
@@ -577,6 +658,19 @@ input::placeholder {
 }
 
 @media screen and (max-width: 650px) {
+
+  .hero {
+    width: 100%;
+    height: 18vh;
+    background-image: url("../images/img1hero.jpeg");
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   footer {
     border-top: 3px solid var(--gray);
     font-family: var(--nova);
@@ -611,7 +705,7 @@ input::placeholder {
   .sidemenu a {
     text-decoration: none;
     font-family: var(--urbane);
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 200;
     color: var(--dark);
     padding: 0px 8px 0px 8px;
@@ -645,7 +739,7 @@ input::placeholder {
     font-family: var(--urbane);
   }
   .hero img {
-    width: 70%;
+    width: 60%;
     height: auto;
   }
 }
