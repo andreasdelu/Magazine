@@ -121,7 +121,6 @@ header {
   position: absolute;
   right: 0px;
   transform: translateX(150%);
-  transition: 0.4s;
   box-shadow: 0 20px 30px 0px rgba(0, 0, 0, 0.096);
   display: none;
 }
@@ -154,9 +153,15 @@ header {
 }
 
 .burgermenu:hover .sidemenu {
-  transform: translateX(0%);
+  animation: sidemenu 0.2s linear forwards;
   display: block;
 }
+
+@keyframes sidemenu {
+  from{ transform: translateX(150%);}
+  to{transform: translateX(0%);}
+}
+
 .abonner {
   color: var(--orange) !important;
   font-weight: 200 !important;
@@ -237,7 +242,7 @@ header {
   top: 0px;
   left: 0;
   background-color: #fbfcff;
-  width: 200px;
+  width: 280px;
   margin-top: 55px;
   box-shadow: 0 20px 30px 0px rgba(0, 0, 0, 0.096);
   
@@ -332,10 +337,10 @@ section {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
 }
 .articles {
+  margin-top: 1.5vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -349,7 +354,6 @@ section {
   margin: 0;
 }
 .articlepreview {
-  height: auto;
   width: 20vw;
   margin: 1.5vw;
   text-align: left;
@@ -362,19 +366,25 @@ section {
 }
 
 .articlepreview img:hover {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .articlepreview a {
   display: block;
 }
 
-.articlepreview h3 {
+.previewtitle{
   margin: 0;
   font-size: 1.2rem;
   font-weight: 500;
   color: var(--dark);
+  text-decoration: none;
 }
+
+.previewtitle:hover{
+  opacity: 0.9;
+}
+
 .articlepreview p {
   margin: 0;
   font-size: 0.95rem;
@@ -557,12 +567,37 @@ input::placeholder {
     margin-right: 9vw;
     margin-top: 3vh;
   }
-  .articlepreview {
+  .container {
+    margin-top: 2vh;
+    background-color: rgba(208, 204, 208, 0.267);
     height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3vh;
+  }
+  .articlepreview {
+    height: 24vw;
     width: 24vw;
-    margin: 1.5vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    margin-bottom: 5vw;
     text-align: left;
     font-family: var(--urbane);
+  }
+  .previewtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--dark);
+    text-decoration: none;
+  }
+  .articlepreview p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--slate);
+    font-weight: 300;
   }
   footer {
     border-top: 3px solid var(--gray);
@@ -592,9 +627,11 @@ input::placeholder {
 @media screen and (max-width: 950px) {
   .container {
     margin-top: 2vh;
+    margin-right: auto;
+    margin-left: auto;
     background-color: rgba(208, 204, 208, 0.267);
     height: auto;
-    width: 100%;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -603,7 +640,7 @@ input::placeholder {
   }
   .articlepreview {
     height: auto;
-    width: 42vw;
+    width: 37vw;
     margin: 1.5vw;
     text-align: left;
     font-family: var(--urbane);
@@ -705,7 +742,7 @@ input::placeholder {
   .sidemenu a {
     text-decoration: none;
     font-family: var(--urbane);
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 200;
     color: var(--dark);
     padding: 0px 8px 0px 8px;
@@ -731,15 +768,46 @@ input::placeholder {
 }
 
 @media screen and (max-width: 400px) {
+
+  .container {
+    margin-top: 2vh;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgba(208, 204, 208, 0.267);
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
   .articlepreview {
     height: auto;
-    width: 60vw;
+    width: 50vw;
     margin: 1.8vw;
     text-align: left;
     font-family: var(--urbane);
   }
+  .previewtitle {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--dark);
+    text-decoration: none;
+  }
+  .articlepreview p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--slate);
+    font-weight: 300;
+  }
   .hero img {
     width: 60%;
     height: auto;
+  }
+  .sidedropdown a{
+    font-size: 1.2rem;
+    margin-left: -20px;
   }
 }
