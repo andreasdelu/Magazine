@@ -303,7 +303,7 @@ section {
 }
 .hero {
   width: 100%;
-  height: 200px;
+  height: 240px;
   background-image: url("../images/img2.jpg");
   background-size: cover;
   background-position: 50% 70%;
@@ -392,13 +392,21 @@ section {
   text-decoration: none;
 }
 .previewtitle:hover{
-  opacity: 0.9;
+  opacity: 0.7;
 }
 .articlepreview p {
   margin: 0;
   font-size: 0.95rem;
   color: var(--slate);
   font-weight: 300;
+}
+
+.dato{
+  font-size: 0.75rem !important;
+  color: var(--slate);
+  font-style: italic;
+  font-weight: 200 !important;
+  opacity: 0.5;
 }
 
 /* Footer */
@@ -458,15 +466,9 @@ footer p {
   width: 50px;
 }
 @keyframes arrowanim {
-  0% {
-    transform: translateY(0%);
-  }
-  50% {
-    transform: translateY(15%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
+  0% {transform: translateY(0%);}
+  50% {transform: translateY(15%);}
+  100% {transform: translateY(0%);}
 }
 
 /* Nyhedsbrev */
@@ -537,18 +539,39 @@ input::placeholder {
 }
 
 /* Articles */
-
-article h1{
+.artikel{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.artikel h1{
   text-align: center;
   font-family: var(--mencken);
   font-size: 2.9rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-article p{
-  text-align: left;
+.artikel p{
+  margin-top: 0;
+  text-align:left;
   font-family: var(--nova);
   font-size: 1.1rem;
+}
+.articlepicR{
+  margin-top: 0.5rem;
+  width: 65%;
+  margin-left: 1rem;
+  max-width: 630px;
+  min-width: 350px;
+  float: right;
+}
+.articlepicL{
+  margin-top: 0.5rem;
+  width: 65%;
+  margin-right: 1rem;
+  max-width: 630px;
+  min-width: 350px;
+  float: left;
 }
 @media screen and (max-width: 1080px) {
   .menu,
@@ -564,7 +587,7 @@ article p{
   }
   .hero {
     width: 100%;
-    height: 180px;
+    height: 210px;
     background-image: url("../images/img2.jpg");
     background-size: cover;
     background-position: 50% 70%;
@@ -777,15 +800,17 @@ article p{
   .burgermenu img {
     padding-top: 10px;
   }
-  article h1{
+  .artikel h1{
     text-align: center;
     font-family: var(--mencken);
     font-size: 2.5rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
-  article p{
-    text-align: left;
+  .artikel p{
+    display: block;
+    margin-top: 0;
+    text-align:left;
     font-family: var(--nova);
     font-size: 1.1rem;
   }
@@ -794,6 +819,12 @@ article p{
     font-size: 0.8rem !important;
     border: 1.5px solid var(--white);
     padding: 3px;
+  }
+  .articlepicR, .articlepicL{
+    width: 100%;
+    margin-bottom: 1rem;
+    min-width: 0px;
+    max-width: 600px;
   }
 }
 @media screen and (max-width: 400px) {
@@ -831,6 +862,13 @@ article p{
     color: var(--slate);
     font-weight: 300;
   }
+  .dato{
+    font-size: 0.65rem !important;
+    color: var(--slate);
+    font-style: italic;
+    font-weight: 200 !important;
+    opacity: 0.5;
+  }
   .hero img {
     width: 50%;
     height: auto;
@@ -850,14 +888,15 @@ article p{
     font-size: 1.2rem;
     margin-left: -20px;
   }
-  article h1{
+  .artikel h1{
     text-align: center;
     font-family: var(--mencken);
     font-size: 2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    white-space: nowrap;
   }
-  article p{
+  .artikel p{
     text-align: left;
     font-family: var(--nova);
     font-size: 1rem;
@@ -888,5 +927,11 @@ article p{
     width: fit-content;
     height: fit-content;
     cursor: pointer;
+  }
+  .articlepicR, .articlepicL{
+    width: 100%;
+    margin-bottom: 1rem;
+    min-width: 0px;
+    max-width: 600px;
   }
 }
