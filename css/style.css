@@ -551,27 +551,48 @@ input::placeholder {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+.artikel h2{
+  font-family: var(--mencken);
+  font-size: 1.2rem;
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  margin-left: 2rem;
+}
 .artikel p{
   margin-top: 0;
   text-align:left;
   font-family: var(--nova);
   font-size: 1.1rem;
 }
-.articlepicR{
-  margin-top: 0.5rem;
-  width: 65%;
-  margin-left: 1rem;
-  max-width: 630px;
-  min-width: 350px;
-  float: right;
+.articlepic{
+  width: 60%;
+  height: auto;
+  max-width: 800px;
 }
-.articlepicL{
-  margin-top: 0.5rem;
-  width: 65%;
-  margin-right: 1rem;
-  max-width: 630px;
-  min-width: 350px;
-  float: left;
+.articlepic img{
+  width: 100%;
+}
+.textbox{
+  width: 45%;
+  margin: 1rem;
+  margin-right: 0;
+  border: 2px solid rgba(0, 0, 0, 0.233);
+  border-right: none;
+  background-color: rgba(128, 128, 128, 0.185);
+}
+
+.textbox p{
+  font-size: 1rem !important;
+  margin-left: 2rem;
+  margin-right: 4rem;
+}
+.artikelbox{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
 }
 @media screen and (max-width: 1080px) {
   .menu,
@@ -725,6 +746,30 @@ input::placeholder {
     font-style: italic;
     color: var(--gray);
   }
+  .textbox{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.233);
+    border-top: none;
+    background-color: rgba(128, 128, 128, 0.185);
+    margin: -5px 5px 0 5px;
+  }
+  .textbox p{
+    font-size: 1rem !important;
+    margin-left: 2rem;
+    margin-right: 1rem;
+  }
+  .artikelbox{
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+  .articlepic{
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    min-width: none;
+  }
 }
 @media screen and (max-width: 650px) {
 
@@ -819,12 +864,6 @@ input::placeholder {
     font-size: 0.8rem !important;
     border: 1.5px solid var(--white);
     padding: 3px;
-  }
-  .articlepicR, .articlepicL{
-    width: 100%;
-    margin-bottom: 1rem;
-    min-width: 0px;
-    max-width: 600px;
   }
 }
 @media screen and (max-width: 400px) {
@@ -928,10 +967,7 @@ input::placeholder {
     height: fit-content;
     cursor: pointer;
   }
-  .articlepicR, .articlepicL{
-    width: 100%;
-    margin-bottom: 1rem;
-    min-width: 0px;
-    max-width: 600px;
+  .textbox h2{
+    font-size: 1.1rem;
   }
 }
