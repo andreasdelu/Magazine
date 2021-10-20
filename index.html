@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Delu">
-    <meta name="description" content="Forsiden for online magasinet STUDYDECO med fokus på boligindretning på SU eller på et stramt budget">
-    <meta name="keywords" content="online, magasin, magazine, SU, billig, cheap, indretning, møbler, ikea, bolia, inspiration, DIY, studerende, studie, student, study, rum, værelse, soveværelse">
+    <meta name="description" content="Online magasinet STUDYDECO med fokus på boligindretning på SU eller på et stramt budget">
+    <meta name="keywords" content="SU, billig, indretning, møbler, inspiration, DIY, studerende, studie, study, deco">
     <title>Forside ⎮ STUDYDECO</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/favicon.png">
 </head>
 <body>
     <header id="header">
@@ -111,7 +112,7 @@
             </div>
         </nav>
         <div class="burgermenu">
-            <img src="images/menu.svg" alt="">
+            <img src="images/menu.svg" alt="burgermenu icon">
             <div class="sidemenu">
                 <ul>
                     <li class="menu1 sidemenuitem"><a>ARTIKLER</a>
@@ -140,33 +141,37 @@
             </div>
         </div>
     </header>
-    <a class="tiltop" href="#header"><img src="images/arrowup.svg" alt="pil op ikon"></a>
+    <!-- <a class="tiltop" href="#header"><img src="images/arrowup.svg" alt="pil op ikon"></a> -->
     <main>
-        <section class="hero">
+        <div class="hero">
             <img src="images/logohvid.svg" alt="Logo i hvid">
-        </section>
+        </div>
         <section class="articles">
             <h2>Seneste artikler</h2>
             <div class="container">
                 <div class="articlepreview">
-                    <a href="articles/artcl001.html"><img src="images/img5.jpg" alt=""></a> 
+                    <a href="articles/artcl001.html">
+                        <div class="overlay">
+                            <p>Læs mere</p>
+                        </div>
+                        <img src="images/img5.jpg" alt="Ny lænestol - Nyt på budget">
+                    </a> 
                     <a href="articles/artcl001.html" class="previewtitle">Nyt på budget</a>
                     <p>Hvor får du nye møbler til brugte møblers pris?</p>
                 </div>
                 <div class="articlepreview">
-                    <a href="articles/artcl002.html"><img src="images/article-4.jpg" alt="Stue med hyggelig belysning - læsernes rum oktober"></a> 
+                    <a href="articles/artcl002.html"><div class="overlay"><p>Læs mere</p></div><img src="images/article-4.jpg" alt="Stue med hyggelig belysning - læsernes rum oktober"></a> 
                     <a href="articles/artcl002.html" class="previewtitle">Læsernes rum - Okt</a>
-                    <p>Denne måneds læsernes rum viser hyggelig studieindretning.</p>
+                    <p>Denne måneds læsernes rum viser hyggelig studieindretning</p>
                 </div>
                 <div class="articlepreview">
-                    <a href="articles/artcl003.html"><img src="images/article-1.jpg" alt="Spisebord ved stort vinduesparti - indret til læsning"></a> 
+                    <a href="articles/artcl003.html"><div class="overlay"><p>Læs mere</p></div><img src="images/article-1.jpg" alt="Spisebord ved stort vinduesparti - indret til læsning"></a> 
                     <a href="articles/artcl003.html" class="previewtitle">Indret til læsning</a>
                     <p>Hvordan indretter du bedst dit studieområde for at maksimere dit fokus?</p>
                 </div>
             </div>
         </section>
     </main>
-
     <footer>
         <div class="adresse">
             <p>Adresse:</p>
@@ -185,6 +190,5 @@
             <a class="icon"><img src="images/twitter.png" alt="twitter logo"></a>
         </div>
     </footer>
-    
 </body>
 </html>
