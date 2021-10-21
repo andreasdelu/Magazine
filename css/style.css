@@ -648,7 +648,7 @@ hr{
 }
 .artikler{
   width: 100%;
-  max-width: 850px;
+  max-width: 1000px;
 }
 .liste{
   font-family: var(--nova);
