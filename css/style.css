@@ -300,6 +300,8 @@ section {
   width: auto;
   height: auto;
   margin-bottom: 5vh;
+  margin-left: auto;
+  margin-right: auto;
 }
 .hero {
   width: 100%;
@@ -547,21 +549,32 @@ input::placeholder {
 .artikel h1{
   text-align: center;
   font-family: var(--mencken);
+  color: var(--dark);
   font-size: 2.9rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 .artikel h2{
   font-family: var(--mencken);
+  color: var(--dark);
   font-size: 1.2rem;
   margin: 0;
   margin-top: 1rem;
-  margin-bottom: 0.3rem;
+  margin-bottom: 1rem;
   margin-left: 2rem;
+}
+.artclsub{
+  font-family: var(--mencken);
+  font-size: 1.1rem;
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  margin-left: 0rem;
 }
 .artikel p{
   margin-top: 0;
   text-align:left;
+  color: var(--dark);
   font-family: var(--nova);
   font-size: 1.1rem;
 }
@@ -579,10 +592,24 @@ input::placeholder {
   margin-right: 0;
   border: 2px solid rgba(0, 0, 0, 0.233);
   border-right: none;
-  background-color: rgba(128, 128, 128, 0.185);
+  background-color: rgba(128, 128, 128, 0.116);
 }
 
 .textbox p{
+  font-size: 1rem !important;
+  margin-left: 2rem;
+  margin-right: 4rem;
+}
+.textboxL{
+  width: 45%;
+  margin: 1rem;
+  margin-left: 0;
+  border: 2px solid rgba(0, 0, 0, 0.233);
+  border-left: none;
+  background-color: rgba(128, 128, 128, 0.116);
+}
+
+.textboxL p{
   font-size: 1rem !important;
   margin-left: 2rem;
   margin-right: 4rem;
@@ -592,7 +619,41 @@ input::placeholder {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+}
+.artikelboxL{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+}
+.imglarge{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.question{
+  font-family: var(--mencken);
+  font-size: 1.1rem;
+  color: var(--dark);
+}
+.ans{
+  font-style: italic;
+  color: var(--slate) !important;
+}
+hr{
+  width: 100%;
+  text-align: center;
+  border: 0;
+  border-top: 2px dotted rgba(128, 128, 128, 0.295);
+}
+.artikler{
+  width: 100%;
+  max-width: 850px;
+}
+.liste{
+  font-family: var(--nova);
+  color: var(--dark);
+  text-align: center;
 }
 @media screen and (max-width: 1080px) {
   .menu,
@@ -751,7 +812,7 @@ input::placeholder {
     box-sizing: border-box;
     border: 2px solid rgba(0, 0, 0, 0.233);
     border-top: none;
-    background-color: rgba(128, 128, 128, 0.185);
+    background-color: rgba(128, 128, 128, 0.116);
     margin: -5px 5px 0 5px;
   }
   .textbox p{
@@ -759,10 +820,28 @@ input::placeholder {
     margin-left: 2rem;
     margin-right: 1rem;
   }
+  .textboxL p{
+    font-size: 1rem !important;
+    margin-left: 2rem;
+    margin-right: 1rem;
+  }
+  .textboxL{
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.233);
+    border-top: none;
+    background-color: rgba(128, 128, 128, 0.116);
+    margin: -5px 5px 0 5px;
+  }
   .artikelbox{
     display: flex;
     justify-content: center;
     flex-direction: column-reverse;
+  }
+  .artikelboxL{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
   .articlepic{
     width: 100%;
@@ -933,7 +1012,6 @@ input::placeholder {
     font-size: 2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    white-space: nowrap;
   }
   .artikel p{
     text-align: left;
@@ -969,5 +1047,23 @@ input::placeholder {
   }
   .textbox h2{
     font-size: 1.1rem;
+    margin-left: 1rem;
+  }
+  .artclsub{
+    margin-left: 0;
+  }
+  .textboxL h2{
+    font-size: 1.1rem;
+    margin-left: 1rem;
+  }
+  .textbox p{
+    font-size: 1rem !important;
+    margin-left: 1rem;
+    margin-right: 4rem;
+  }
+  .textboxL p{
+    font-size: 1rem !important;
+    margin-left: 1rem;
+    margin-right: 4rem;
   }
 }
